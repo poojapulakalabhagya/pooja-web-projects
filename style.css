@@ -1,17 +1,33 @@
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@200&display=swap');
+
 body{
-	background:rgba(225,255,0,0.3);
+	background:rgba(5,255,0,0.3);
+	color: #00f !important;
+}
+h1{
+	color: #f03;
+}
+h3{
+	color: #f0c;
 }
 
-/***************comment in css **************/
+body h1 {
+	color: #000;
+}
 
+section p {
+	color: #000;
+}
 
-/*
-------------Color code RGBA--------------
-rgba(
-		[here value can vary from 0-255],
-		[here value can vary from 0-255],
-		[here value can vary from 0-255],
-		[this determines opacity from 0-1]
-	)
+/*Specificity in css*/
 
-*/
+body > section > h3{
+	background: #0ff;
+}
+
+/*font style*/
+
+body{
+	font-family:monospace;
+	font-weight: 100;
+}
