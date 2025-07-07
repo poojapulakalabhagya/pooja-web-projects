@@ -1,21 +1,19 @@
-const display = document.querySelector("#display");
-const buttons = document.querySelectorAll("button");
+let message = document.getElementById("message");
 
-buttons.forEach((item) => {
-  item.onclick = () => {
-    if (item.id == "clear") {
-      display.innerText = "";
-    } else if (item.id == "backspace") {
-      let string = display.innerText.toString();
-      display.innerText = string.substr(0, string.length - 1);
-    } else if (display.innerText != "" && item.id == "equal") {
-      display.innerText = eval(display.innerText);
-    } else if (display.innerText == "" && item.id == "equal") {
-      display.innerText = "Empty!";
-      setTimeout(() => (display.innerText = ""), 2000);
-    } else {
-      display.innerText += item.id;
-    }
-  };
-});
+let messageOnline = () => {
+  message.textContent = "Internet Connection Available";
+  message.style.cssText = "background-color: #e7f6d5; color: #689f38";
+};
+let messageOffline = () => {
+  message.textContent = "No Internet Connection";
+  message.style.cssText = "background-color: #ffdde0; color: #d32f2f";
+};
 
+if (window.navigator.onLine) {
+  messageOnline();
+} else {
+  messageOffline();
+}
+
+window.addEventListener("online", messageOnline);
+window.addEventListener("offline", messageOffline);
