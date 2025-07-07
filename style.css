@@ -1,33 +1,40 @@
-.box1{
-    background-color: orange;
-    color: black;
-    font-family: Arial, sans-serif;
-    width: 100px;
-    height: 100px;
-    padding: 10px;
-    transform: translate(30px,10px);
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    transition: all 500ms;
+}
 
-    /* for different browsers:
--ms-transform: rotate(30deg);
--webkit-transform: rotate(30deg);
+body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    background-color: #111;
+    font-size: 7vmin;
+}
 
-    */
-  }
-  .box2{
-    background-color: green;
-    color: black;
-    font-family: Arial, sans-serif;
-    width: 100px;
-    height: 100px;
-    padding: 10px;
-    transform: rotate(30deg);
-  }
-  .box3{
-    background-color: yellow;
-    color: black;
-    font-family: Arial, sans-serif;
-    width: 100px;
-    height: 100px;
-    padding:10px;
-    transform: skew(10deg,10deg);
-  }
+.board {
+    display: grid;
+    grid-template-rows: repeat(4, 20vmin);
+    grid-template-columns: repeat(4, 20vmin);
+    background-color: #ccc;
+    gap: 2vmin;
+    padding: 2vmin;
+    border-radius: 1vmin;
+    position: relative;
+}
+
+.tile {
+    border-radius: 1vmin;
+    background-color: #aaa;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #111;
+    font-weight: bold;
+}
+
+.active {
+    background-color: hsl(10, 50%, 50);
+}
