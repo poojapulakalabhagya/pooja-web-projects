@@ -5,86 +5,75 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Concert Project</title>
-    <link rel="icon" href="fav.ico">
-    <link rel="stylesheet" href="main.css">
-    <link rel="stylesheet" media="screen and (max-width: 1493px)" href="phone.css">
-    <link rel="stylesheet" media="screen and (max-width: 758px)" href="phone2.css">
+    <link rel="stylesheet" href="Contact Directory/style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bangers&display=swap" rel="stylesheet">
+    <title>Contact Directory</title>
 </head>
 
 <body>
-    <nav id="navbar">
-        <div id="div1">
-            <p>Rocking-Rocks</p>
-        </div>
-        <div id="div2">
-            <ul>
-                <li><a href="#">Home</a></li>
-                <li><a href="#about">About us</a></li>
-                <li><a href="#serv">Services</a></li>
-                <li><a href="#register">Register</a></li>
-                <li><a href="#">Contact us</a></li>
-            </ul>
-        </div>
-        <div id="div3">
-            <span id="time"></span>
-        </div>
-    </nav>
-    <section id="about">
-        <h3 id="head">Who we Are!!!</h3>
-        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Iusto optio itaque dolor accusantium dolorum
-            debitis voluptatibus obcaecati, quos perferendis facilis dicta odio libero ea nisi, laboriosam corporis quis
-            voluptatem incidunt pariatur! Rerum, maiores beatae quos, nisi consequatur id quo illo voluptatibus neque
-            repellendus ad, ut tempore! Repellat velit dolores saepe!</p>
-    </section>
-    <section class="services">
-        <h3 id="serv">What We Do &nbsp;!!!!!!!!</h3>
-        <div class="boxs">
-            <div id="box1" class="box">
-                <h3 class="heads">Concerts</h3>
-                <p>The term concert is a “wholesale” name containing many different genres therein a musical performance given in public, typically by several performers or of several compositions: Some of these include:</p>
 
-                     <p>⭐live</p>
-                   <p>⭐piano</p>
-                   <p>⭐symphony</p>
-                 <p>⭐jazz</p>
-               <p>⭐ classical</p>
-            
-            </div>
-            <div id="box2" class="box">
-                
-            </div>
+    <main>
+        <div id="head">
+        <h1>Contact Directory</h1></div>
+        <div class="container row">
+            <section class="ListContainer column">
+                <div id="people" class="Contact_list"></div>
+            </section>
+            <br>
+            <form autocomplete="off" class="js-form column">
+                <div class="name">
+                    <i class="far fa-user"></i>
+                    <input type="text" required id="fullName" placeholder="Enter name" />
+                </div>
+                <div class="email">
+                    <i class="fas fa-at"></i>
+                    <input type="email" required id="myEmail" placeholder="Enter email" />
+                </div>
+
+                <div class="number">
+                    <i class="fas fa-phone"></i>
+                    <input type="tel" required id="myTel" placeholder="Enter number" />
+                </div>
+
+                <div class="img">
+                    <i class="far fa-image"></i>
+                    <input type="url" required id="imgurl" placeholder="Enter image url" />
+                </div>
+                <button type="submit" class="submitbtn"></button>
+            </form>
         </div>
-        <div class="boxs">
-            <div id="box3" class="box">
-                
-            </div>
-            <div id="box4" class="box">
-                <h3 class="heads">DJ Parties</h3>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis aut debitis fuga dolor quisquam iusto quos possimus eos, dolore officia eum provident aliquam libero officiis, earum praesentium facilis dicta excepturi dolorem delectus molestiae magnam ipsam voluptatibus sapiente! Beatae, id delectus.</p>
-            </div>
-        </div>
-         <h3 id="serv">And Many More.....</h3>
-    </section>
-    <section id="register">
-        <h3 id="serv">Register Now to Host An Event....</h3>
-        <form action="backend.php">
-            <p>Name:</p><input type="text" placeholder="Enter Your Name">
-            <p>Mobile number:</p><input type="number" placeholder="Enter Your Mobile Number">
-            <p>City:</p><input type="text" placeholder="Enter your city"><br>
-            <button id="btn">Submit</button>
-        </form>
-    </section>
-    <footer>
-        <p id="f">&copyCopyright.All Rights Reserved</p>
-    </footer>
+    </main>
+
+    <script src="Contact Directory/script.js"></script>
+    <script src="https://kit.fontawesome.com/dd8c49730d.js" crossorigin="anonymous"></script>
+    <script async defer src="https://buttons.github.io/buttons.js"></script>
     <script>
-        function dispalyTime() {
-            time=new Date();
-            console.log(time);
-            document.getElementById('time').innerHTML=time;
+        const toggleSwitch = document.querySelector(
+            '.theme-switch input[type="checkbox"]'
+        );
+        const currentTheme = localStorage.getItem("theme");
+
+        if (currentTheme) {
+            document.documentElement.setAttribute("data-theme", currentTheme);
+
+            if (currentTheme === "dark") {
+                toggleSwitch.checked = true;
+            }
         }
-        setInterval(dispalyTime , 1000);
+
+        function switchTheme(e) {
+            if (e.target.checked) {
+                document.documentElement.setAttribute("data-theme", "dark");
+                localStorage.setItem("theme", "dark");
+            } else {
+                document.documentElement.setAttribute("data-theme", "light");
+                localStorage.setItem("theme", "light");
+            }
+        }
+
+        toggleSwitch.addEventListener("change", switchTheme, false);
     </script>
 </body>
 
