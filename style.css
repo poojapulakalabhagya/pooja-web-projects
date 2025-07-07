@@ -1,12 +1,48 @@
-/* margin and boder*/
-body
-{
-	margin:10px 10px 20px 30px;
+* {
+  margin: 0px;
+  padding: 0px;
+  list-style: none;
+}
+.menu {
+  width: 1000px;
+  margin: auto;
+  background-color: black;
+}
+.menu > ul {
+  color: white;
+  display: flex;
+}
+.menu > ul > li {
+  padding: 15px 25px;
+  position: relative;
 }
 
-#section_id
-{
-	border: 2px dashed #000;
-	border-top: none;
+.submenu {
+  position: absolute;
+  width: 120px;
+  left: -85%;
+  top: 100%;
+  color: black;
+  opacity: 0;
+  visibility: hidden;
+  transition: 0.5s;
 }
-5
+.submenu li {
+  padding: 12px;
+  border: 1px solid orangered;
+}
+.active {
+  background-color: orangered;
+}
+.menu > ul li:hover {
+  background-color: orangered;
+}
+.submenu li:hover {
+  color: white;
+}
+
+.menu > ul > li:hover .submenu {
+  opacity: 1;
+  left: 0px;
+  visibility: visible;
+}
