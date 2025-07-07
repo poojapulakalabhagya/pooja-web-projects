@@ -1,60 +1,37 @@
-body {
-  padding: 1rem;
+*{
+    padding: 0;
+    margin: 0;
 }
-
-* {
-  box-sizing: border-box;
+#game{
+    width: 400px;
+    height: 500px;
+    border: 1px solid black;
+    margin: auto;
+    overflow: hidden;
 }
-
-input[type=text] {
-  height: 40px;
-  width: 40px;
-  border-radius: 40px;
-  padding: 0px 10px;
-
-  border: 1px solid #ccc;
-
-  margin: 0;
-  font-family: inherit;
-  font-size: inherit;
-  line-height: inherit;
-
-  -webkit-transition: all 0.5s ease;
-  -moz-transition: all 0.5s ease;
-  -o-transition: all 0.5s ease;
-  -ms-transition: all 0.5s ease;
-  transition: all 0.5s ease;
+#character{
+    width: 20px;
+    height: 20px;
+    background-color: red;
+    border-radius: 50%;
+    position: relative;
+    top: 400px;
+    left: 190px;
+    z-index: 1000000;
 }
-
-.active, input[type=text]:active, input[type=text]:focus-visible {
-  width: 200px!important;
-  border: 2px solid #ccc !important;
+.block{
+    width: 400px;
+    height: 20px;
+    background-color: black;
+    position: relative;
+    top: 100px;
+    margin-top: -20px;
 }
-
-form {
-  position: relative;
-  display: flex;
-}
-button {
-  height: 40px;
-  width: 40px;
-  border-radius: 40px;
-  position: absolute;
-  top: 0;
-  right: 0;
-
-  border: 1px solid #ccc;
-
-  -webkit-transition: all 0.5s ease;
-  -moz-transition: all 0.5s ease;
-  -o-transition: all 0.5s ease;
-  -ms-transition: all 0.5s ease;
-  transition: all 0.5s ease;
-}
-
-button:hover {
-  background: #ccc;
-}
-button:focus {
-  border: 2px solid #ccc;
+.hole{
+    width: 40px;
+    height: 20px;
+    background-color: white;
+    position: relative;
+    top: 100px;
+    margin-top: -20px;
 }
